@@ -1,11 +1,11 @@
 FROM node:14.19.1-alpine
 
+WORKDIR /opt/api
+
 COPY ["package.json", "/opt/api/"]
 COPY ["package-lock.json", "/opt/api/"]
 
-WORKDIR /opt/api
-
-RUN npm ci
+RUN npm install && npm cache clean --force
 
 COPY ["./", "/opt/api/"]
 

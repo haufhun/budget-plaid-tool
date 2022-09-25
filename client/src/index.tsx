@@ -1,14 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
-import App from "./App";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-
-const theme = createTheme({
-  palette: {
-    mode: "dark",
-  },
-});
+import { store } from "./app/store";
+import App from "./App";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -16,10 +12,11 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

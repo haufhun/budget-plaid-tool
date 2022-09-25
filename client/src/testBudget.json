@@ -1,0 +1,52 @@
+{
+  "month": "2022-05",
+  "income": {
+    "name": "Income for May",
+    "items": [
+      {
+        "id": "1",
+        "name": "STC",
+        "planned": 4000,
+        "remaining": 3245.09
+      },
+      {
+        "id": "2",
+        "name": "VYA",
+        "planned": 700,
+        "remaining": 300
+      }
+    ]
+  },
+  "categories": [
+    {
+      "name": "Give",
+      "items": [
+        {
+          "id": "3",
+          "name": "Give",
+          "planned": 900,
+          "remaining": 900,
+          "transactionIds": ["1234"]
+        },
+        {
+          "id": "4",
+          "name": "General Giving",
+          "planned": 300,
+          "remaining": 300,
+          "transactionIds": ["1234"]
+        }
+      ]
+    },
+    {
+      "name": "Save",
+      "items": [
+        {
+          "id": "5",
+          "name": "Emergency Fund",
+          "planned": 900,
+          "remaining": 900
+        }
+      ]
+    }
+  ]
+}

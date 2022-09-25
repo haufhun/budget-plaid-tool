@@ -3,10 +3,15 @@ version: "3.1"
 
 volumes:
   mongo_persist_data:
+  api_node_modules:
+  client_node_modules:
 
 services:
   client:
     build: ./client
+    volumes:
+      - ./client:/opt/client/
+      - client_node_modules:/opt/client/node_modules
     ports:
       - 3001:3001
     environment:
@@ -16,6 +21,11 @@ services:
 
   api:
     build: ./api
+    restart: always
+    command: npm run dev:watch
+    volumes:
+      - ./api:/opt/api/
+      - api_node_modules:/opt/api/node_modules
     ports:
       - 4090:4090
     environment:

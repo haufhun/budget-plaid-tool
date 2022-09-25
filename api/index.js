@@ -6,6 +6,9 @@ import {
   getAccessToken,
   getAccounts,
   getTransactions,
+  getBudget,
+  addCategory,
+  authGet,
 } from "./controllers.js";
 
 const app = express();
@@ -25,6 +28,11 @@ app.post("/getLinkToken", getLinkToken);
 app.post("/getAccessToken", getAccessToken);
 app.post("/getAccounts", getAccounts);
 app.post("/getTransactions", getTransactions);
+app.post("/authGet", authGet);
+
+app.post("/getBudget", getBudget);
+app.post("/getBudget", getBudget);
+app.post("/addCategory", addCategory);
 
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
